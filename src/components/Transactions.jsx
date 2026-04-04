@@ -30,7 +30,13 @@ const SwipeRow = ({ t, role, handledelete }) => {
   return (
     <div className="swipe-row-wrapper">
 
-      <div className="swipe-delete-bg" onClick={() => handledelete(t.id)}>
+      <div
+  className="swipe-delete-bg"
+  onClick={() => {
+    if (!t?.id) return;
+    handledelete(t.id);
+  }}
+>
         <span>Delete</span>
       </div>
 
@@ -185,7 +191,18 @@ const Transactions = ({ transactions, role, handledelete, handleadd }) => {
                 </td>
                 {role === "admin" && (
                   <td>
-                    <button onClick={() => handledelete(t.id)    }className='desktop-delete-btn'>Delete</button>
+                    <button
+  onClick={() => {
+    if (!t?.id) {
+      alert("Invalid transaction (no id)");
+      return;
+    }
+    handledelete(t.id);
+  }}
+  className="desktop-delete-btn"
+>
+  Delete
+</button>
                   </td>
                 )}
               </tr>
