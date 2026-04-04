@@ -99,7 +99,8 @@ const Transactions = ({ transactions, role, handledelete, handleadd }) => {
   };
 
   // ✅ FILTER LOGIC
-  const filteredTransactions = transactions.filter((t) => {
+ const filteredTransactions = transactions
+  .filter((t) => {
     const matchesSearch = t.description
       .toLowerCase()
       .includes(search.toLowerCase());
@@ -108,7 +109,8 @@ const Transactions = ({ transactions, role, handledelete, handleadd }) => {
       filterType === "all" || t.type === filterType;
 
     return matchesSearch && matchesType;
-  });
+  })
+  .sort((a, b) => new Date(b.date) - new Date(a.date)); // ✅ NEWEST FIRST
 
   return (
     <div className="table-container">

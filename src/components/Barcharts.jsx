@@ -3,7 +3,6 @@ import {
   Bar,
   XAxis,
   YAxis,
-  Tooltip,
   ResponsiveContainer,
   CartesianGrid
 } from "recharts";
@@ -19,8 +18,13 @@ const BarChartComponent = ({ data, dataKey, title, color }) => {
             <CartesianGrid stroke="#2d3748" strokeDasharray="3 3" />
             <XAxis dataKey="month" stroke="#9ca3af" />
             <YAxis stroke="#9ca3af" />
-            <Tooltip />
-            <Bar dataKey={dataKey} fill={color} />
+
+            {/* ✅ FIXED BAR */}
+            <Bar
+              dataKey={dataKey}
+              fill={color}
+              activeBar={false}   // ❌ removes click highlight
+            />
           </BarChart>
         </ResponsiveContainer>
       </div>

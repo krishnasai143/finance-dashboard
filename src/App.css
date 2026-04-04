@@ -1,6 +1,9 @@
 body{
   margin:0;
 }
+.recharts-wrapper * {
+  outline: none !important;
+}
 /* Desktop */
 .charts-row {
   display: flex;
