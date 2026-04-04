@@ -39,11 +39,16 @@ const App = () => {
   try {
     console.log("Deleting ID:", id);
 
-    await axios.delete(`${API_URL}/${id}`);
+    // 🔥 Ensure string id
+    const deleteId = String(id);
 
-    settransactions(prev =>
-      prev.filter(t => String(t.id) !== String(id))
-    );
+    const res = await axios.delete(`${API_URL}/${deleteId}`);
+
+    console.log("DELETE RESPONSE:", res.data);
+
+    // 🔥 REFRESH FROM SERVER (MOST IMPORTANT FIX)
+    const updated = await axios.get(API_URL);
+    settransactions(updated.data);
 
   } catch (err) {
     console.log("DELETE ERROR:", err);
