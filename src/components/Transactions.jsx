@@ -176,7 +176,7 @@ const Transactions = ({ transactions, role, handledelete, handleadd }) => {
                   </select>
                 </td>
                 <td><input name="amount" value={formData.amount} onChange={handleChange} /></td>
-                <td><button  onClick={handlesubmit}>Add</button></td>
+                <td><button  className="add-btn"onClick={handlesubmit}>Add</button></td>
               </tr>
             )}
 
