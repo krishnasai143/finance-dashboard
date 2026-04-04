@@ -87,6 +87,14 @@
       "type": "income",
       "amount": 23000,
       "id": "Vg-f4Ak06cQ"
+    },
+    {
+      "date": "2026-04-01",
+      "description": "salary",
+      "category": "Other",
+      "type": "expense",
+      "amount": 20000,
+      "id": "kfkPjzwE_jA"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
