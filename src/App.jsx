@@ -37,8 +37,9 @@ const App = () => {
   // ✅ DELETE TRANSACTION
   const handledelete = (id) => {
     axios.delete(`${API_URL}/${id}`)
+    
       .then(() => {
-        settransactions(prev => prev.filter((t) => t.id !== id));
+        settransactions(prev => prev.filter((t) => String(t.id) !== String(id)));
       })
       .catch(err => console.log(err));
   };
