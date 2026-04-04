@@ -88,7 +88,7 @@ const Piecharts = ({ data, range, setRange }) => {
                 cy="50%"
               >
                 {data.map((entry, index) => (
-                  <Cell key={index}fill={CATEGORY_COLORS[entry.category]} />
+                  <Cell key={index} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>
               <Tooltip
