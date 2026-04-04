@@ -85,8 +85,18 @@ const Transactions = ({ transactions, role, handledelete, handleadd }) => {
   });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const { name, value } = e.target;
+
+  if (name === "type") {
+    setFormData({
+      ...formData,
+      type: value,
+      category: CATEGORY_MAP[value][0] // ✅ auto select first
+    });
+  } else {
+    setFormData({ ...formData, [name]: value });
+  }
+};
 
   const handlesubmit = () => {
     if (!formData.date || !formData.description || !formData.amount || !formData.category) {
@@ -111,8 +121,24 @@ const Transactions = ({ transactions, role, handledelete, handleadd }) => {
     return matchesSearch && matchesType;
   })
   .sort((a, b) => new Date(b.date) - new Date(a.date)); // ✅ NEWEST FIRST
+  const CATEGORY_MAP = {
+  income: ["Salary", "Freelance"],
+  expense: [
+    "Food",
+    "Rent",
+    "Utilities",
+    "Groceries",
+    "Shopping",
+    "Entertainment",
+    "Travel",
+    "Investment",
+    "Savings",
+    "Other"
+  ]
+};
 
   return (
+    
     <div className="table-container">
 
       <div className="table-header">
@@ -163,20 +189,19 @@ const Transactions = ({ transactions, role, handledelete, handleadd }) => {
                 <td><input type="date" name="date" value={formData.date} onChange={handleChange} /></td>
                 <td><input name="description" value={formData.description} onChange={handleChange} /></td>
                 <td>
-                  <select name="category" value={formData.category} onChange={handleChange}>
-                    <option value="">Select</option>
-                    <option>Food</option>
-                    <option>Rent</option>
-                    <option>Utilities</option>
-                    <option>Shopping</option>
-                  </select>
-                </td>
-                <td>
                   <select name="type" value={formData.type} onChange={handleChange}>
                     <option value="expense">Expense</option>
                     <option value="income">Income</option>
                   </select>
                 </td>
+                <td>
+                 <select name="category" value={formData.category} onChange={handleChange}>
+  {CATEGORY_MAP[formData.type].map((c) => (
+    <option key={c} value={c}>{c}</option>
+  ))}
+</select>
+                </td>
+                
                 <td><input name="amount" value={formData.amount} onChange={handleChange} /></td>
                 <td><button  className="add-btn"onClick={handlesubmit}>Add</button></td>
               </tr>
@@ -220,25 +245,17 @@ const Transactions = ({ transactions, role, handledelete, handleadd }) => {
   <div className="mobile-form">
     <input type="date" name="date" value={formData.date} onChange={handleChange} />
     <input name="description" value={formData.description} onChange={handleChange} placeholder="Description" />
-
-    <select name="category" value={formData.category} onChange={handleChange}>
-      <option value="" disabled hidden>Select category</option>
-      <option value="Food">Food</option>
-      <option value="Rent">Rent</option>
-      <option value="Utilities">Utilities</option>
-      <option value="Groceries">Groceries</option>
-      <option value="Shopping">Shopping</option>
-      <option value="Entertainment">Entertainment</option>
-      <option value="Travel">Travel</option>
-      <option value="Investment">Investment</option>
-      <option value="Savings">Savings</option>
-      <option value="Other">Other</option>
-    </select>
-
     <select name="type" value={formData.type} onChange={handleChange}>
       <option value="expense">Expense</option>
       <option value="income">Income</option>
     </select>
+   <select name="category" value={formData.category} onChange={handleChange}>
+  {CATEGORY_MAP[formData.type].map((c) => (
+    <option key={c} value={c}>{c}</option>
+  ))}
+</select>
+
+    
 
     <input name="amount" value={formData.amount} onChange={handleChange} placeholder="Amount" />
 

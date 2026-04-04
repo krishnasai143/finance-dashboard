@@ -1,15 +1,18 @@
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 import { useEffect, useState } from "react";
 
-const COLORS = {
-  Rent: "#a78bfa",
-  Food: "#22c55e",
-  Utilities: "#ef4444",
-  Shopping: "#facc15",
-  Entertainment: "#38bdf8",
-  Savings: "#34d399",
-  Travel: "#f97316"
-};
+const COLORS = [
+  "#a78bfa",
+  "#22c55e",
+  "#ef4444",
+  "#facc15",
+  "#38bdf8",
+  "#34d399",
+  "#f97316",
+  "#6366f1",
+  "#e879f9",
+  "#f43f5e"
+];
 const Piecharts = ({ data, range, setRange }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
 
@@ -88,7 +91,7 @@ const Piecharts = ({ data, range, setRange }) => {
                 cy="50%"
               >
                 {data.map((entry, index) => (
-                  <Cell key={index} fill={COLORS[entry.category]} />
+                  <Cell fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>
               <Tooltip
