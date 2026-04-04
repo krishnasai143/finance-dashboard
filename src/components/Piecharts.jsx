@@ -1,7 +1,7 @@
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 import { useEffect, useState } from "react";
 
-const CATEGORY_COLORS = {
+const COLORS = {
   Rent: "#a78bfa",
   Food: "#22c55e",
   Utilities: "#ef4444",
