@@ -155,15 +155,22 @@ select option {
   background: #a78bfa;
   border: none;
   color: white;
-  padding: 0 0.875rem;
+  padding: 6px 12px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 0.875rem;
   font-family: inherit;
+    transition: 0.2s;
+
 }
+
+
 
 .desktop-delete-btn:hover {
   opacity: 0.8;
+  
+  background: #8b5cf6;
+
 }
 
 .add-btn {

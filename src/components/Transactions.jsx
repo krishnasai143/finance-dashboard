@@ -170,7 +170,7 @@ const Transactions = ({ transactions, role, handledelete, handleadd }) => {
                   </select>
                 </td>
                 <td><input name="amount" value={formData.amount} onChange={handleChange} /></td>
-                <td><button onClick={handlesubmit}>Add</button></td>
+                <td><button  onClick={handlesubmit}>Add</button></td>
               </tr>
             )}
 
@@ -185,7 +185,7 @@ const Transactions = ({ transactions, role, handledelete, handleadd }) => {
                 </td>
                 {role === "admin" && (
                   <td>
-                    <button onClick={() => handledelete(t.id)}>Delete</button>
+                    <button onClick={() => handledelete(t.id)    }className='desktop-delete-btn'>Delete</button>
                   </td>
                 )}
               </tr>
