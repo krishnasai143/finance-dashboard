@@ -37,18 +37,14 @@ const App = () => {
   // ✅ DELETE TRANSACTION
  const handledelete = async (id) => {
   try {
-    console.log("Deleting ID:", id);
-
-    // 🔥 Ensure string id
     const deleteId = String(id);
 
-    const res = await axios.delete(`${API_URL}/${deleteId}`);
+    console.log("Deleting ID:", deleteId);
 
-    console.log("DELETE RESPONSE:", res.data);
+    await axios.delete(`${API_URL}/${deleteId}`);
 
-    // 🔥 REFRESH FROM SERVER (MOST IMPORTANT FIX)
-    const updated = await axios.get(API_URL);
-    settransactions(updated.data);
+    // 🔥 force reload (guaranteed UI update)
+    window.location.reload();
 
   } catch (err) {
     console.log("DELETE ERROR:", err);
