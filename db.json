@@ -71,6 +71,22 @@
       "type": "expense",
       "amount": 750,
       "id": "1Z2U__ZUbZo"
+    },
+    {
+      "date": "2026-04-01",
+      "description": "salary",
+      "category": "Shopping",
+      "type": "income",
+      "amount": 50000,
+      "id": "76ZugJNl8RY"
+    },
+    {
+      "date": "2026-04-02",
+      "description": "salary",
+      "category": "Utilities",
+      "type": "income",
+      "amount": 23000,
+      "id": "Vg-f4Ak06cQ"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

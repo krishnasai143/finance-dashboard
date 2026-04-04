@@ -197,7 +197,35 @@ const Transactions = ({ transactions, role, handledelete, handleadd }) => {
 
       {/* ── MOBILE LIST ── */}
       <div className="mobile-list">
+        {showform && role === "admin" && (
+  <div className="mobile-form">
+    <input type="date" name="date" value={formData.date} onChange={handleChange} />
+    <input name="description" value={formData.description} onChange={handleChange} placeholder="Description" />
 
+    <select name="category" value={formData.category} onChange={handleChange}>
+      <option value="" disabled hidden>Select category</option>
+      <option value="Food">Food</option>
+      <option value="Rent">Rent</option>
+      <option value="Utilities">Utilities</option>
+      <option value="Groceries">Groceries</option>
+      <option value="Shopping">Shopping</option>
+      <option value="Entertainment">Entertainment</option>
+      <option value="Travel">Travel</option>
+      <option value="Investment">Investment</option>
+      <option value="Savings">Savings</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <select name="type" value={formData.type} onChange={handleChange}>
+      <option value="expense">Expense</option>
+      <option value="income">Income</option>
+    </select>
+
+    <input name="amount" value={formData.amount} onChange={handleChange} placeholder="Amount" />
+
+    <button className="add-btn" onClick={handlesubmit}>Add</button>
+  </div>
+)}
         {filteredTransactions.map((t) => (
           <SwipeRow
             key={t.id}
