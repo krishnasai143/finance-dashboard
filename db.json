@@ -1,0 +1,77 @@
+{
+  "transactions": [
+    {
+      "date": "2026-01-14",
+      "description": "shoes",
+      "category": "Shopping",
+      "type": "expense",
+      "amount": 2000,
+      "id": "eKVLG8HasLU"
+    },
+    {
+      "date": "2026-01-01",
+      "description": "salary",
+      "category": "Other",
+      "type": "income",
+      "amount": 50000,
+      "id": "HoQWsZBcViQ"
+    },
+    {
+      "date": "2026-01-10",
+      "description": "share market",
+      "category": "Savings",
+      "type": "expense",
+      "amount": 15000,
+      "id": "7FlbuHllhGM"
+    },
+    {
+      "date": "2026-02-01",
+      "description": "salary",
+      "category": "Other",
+      "type": "income",
+      "amount": 50000,
+      "id": "XJXqjOSyFC8"
+    },
+    {
+      "date": "2026-02-20",
+      "description": "birthday celebration",
+      "category": "Other",
+      "type": "expense",
+      "amount": 5000,
+      "id": "uU9Gnc3WfKY"
+    },
+    {
+      "date": "2026-03-01",
+      "description": "salary",
+      "category": "Other",
+      "type": "income",
+      "amount": 50000,
+      "id": "oRkrDKvsnnc"
+    },
+    {
+      "date": "2026-04-01",
+      "description": "salary",
+      "category": "Other",
+      "type": "income",
+      "amount": 50000,
+      "id": "Z-TsASXHJy0"
+    },
+    {
+      "date": "2026-04-08",
+      "description": "fees",
+      "category": "Utilities",
+      "type": "expense",
+      "amount": 96000,
+      "id": "X8m009v4CuQ"
+    },
+    {
+      "date": "2026-03-04",
+      "description": "gas cylinder",
+      "category": "Groceries",
+      "type": "expense",
+      "amount": 750,
+      "id": "1Z2U__ZUbZo"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

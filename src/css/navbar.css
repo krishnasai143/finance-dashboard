@@ -1,0 +1,88 @@
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: #161b27;
+  border-bottom: 1px solid #2d3748;
+}
+
+.nav-link {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+/* Title */
+.navbar-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #a78bfa;
+  
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+}
+
+/* Selected box */
+.dropdown-selected {
+  border: 1px solid #2d3748;  /* softer border */
+
+  text-align: left;
+  background: #1e2535;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;   /* ↓ reduced */
+  font-size: 13px;     /* ↓ slightly smaller */
+  min-width: 90px;
+}
+
+/* Arrow */
+.arrow {
+  font-size: 10px;
+  margin-left: 8px;
+}
+
+/* Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: #1e2535;
+  border: 1px solid #2d3748;
+  background: #1b2233; 
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  min-width: 100%;
+  z-index: 10;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+
+}
+
+/* Options */
+.dropdown-menu div {
+  cursor: pointer;
+  padding: 8px 10px;  /* smaller */
+  font-size: 13px;
+}
+
+/* Hover */
+.dropdown-menu div:hover {
+  background: #374151;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .dropdown-selected {
+    min-width: 90px;
+    padding: 6px 10px;
+  }
+}

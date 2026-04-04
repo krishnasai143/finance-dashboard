@@ -1,0 +1,30 @@
+body{
+  margin:0;
+}
+/* Desktop */
+.charts-row {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.pie-insights-row {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.flex-box {
+  flex: 1;
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .charts-row {
+    flex-direction: column;
+  }
+
+  .pie-insights-row {
+    flex-direction: column;
+  }
+}
