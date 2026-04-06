@@ -1,18 +1,17 @@
 .insights-container {
   flex: 1;
-  background: #0c0f17; /* 🔥 darker than page */
+  background: #0c0f17; 
   margin: 20px;
   padding: 20px;
   border-radius: 10px;
  
-  min-height: 300px; /* match pie height */
+  min-height: 300px; 
 
   border: 1px solid #1f2937;
   display: flex;
   flex-direction: column;
 }
 
-/* Header (same style as pie) */
 .insights-header {
   display: flex;
   justify-content: space-between;
@@ -21,16 +20,16 @@
 }
 
 .insights-header h3 {
-  color: #e5e7eb; /* same bright tone */
-  font-size: 18px; /* slightly bigger */
-  font-weight: 600; /* stronger like pie */
+  color: #e5e7eb; 
+  font-size: 18px; 
+  font-weight: 600; 
 }
 
-/* Content */
+
 .insights-content {
   display: flex;
   flex-direction: column;
-  gap: 16px; /* better spacing */
+  gap: 16px; 
   margin-top: 10px;
 }
 

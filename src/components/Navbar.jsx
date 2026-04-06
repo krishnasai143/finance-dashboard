@@ -20,7 +20,6 @@ const Navbar = ({ role, setRole }) => {
       <div className="navbar-right">
         <div className="dropdown">
 
-          {/* Selected */}
           <div 
             className="dropdown-selected"
             onClick={() => setOpen(!open)}
@@ -29,7 +28,6 @@ const Navbar = ({ role, setRole }) => {
             <span className="arrow">▼</span>
           </div>
 
-          {/* Menu */}
           {open && (
             <div className="dropdown-menu">
               <div onClick={() => handleSelect("admin")}>Admin</div>

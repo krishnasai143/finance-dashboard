@@ -7,7 +7,6 @@ import Insights from '../components/Insights.jsx';
 
 const Dashboard = ({ balance, income, expenses, transactions }) => {
 
-  // ✅ FIXED: useState at top level
   const [range, setRange] = useState("6");
 
   const getMonthlyData = () => {
@@ -96,7 +95,6 @@ const monthlyExpenses = transactions
   expenses={monthlyExpenses} 
 />
 
-    {/* 🔹 BAR CHARTS */}
     <div className="charts-row">
       <Barcharts
         data={chartData}
@@ -113,7 +111,6 @@ const monthlyExpenses = transactions
       />
     </div>
 
-    {/* 🔹 PIE + INSIGHTS */}
     <div className="pie-insights-row">
 
       <div className="flex-box">
@@ -134,7 +131,6 @@ const monthlyExpenses = transactions
 
     </div>
 
-    {/* 🔹 TRANSACTIONS */}
     <Transactions 
       transactions={transactions.slice(0,5)} 
       role="viewer" 

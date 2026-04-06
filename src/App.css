@@ -4,7 +4,6 @@ body{
 .recharts-wrapper * {
   outline: none !important;
 }
-/* Desktop */
 .charts-row {
   display: flex;
   gap: 20px;
@@ -21,7 +20,6 @@ body{
   flex: 1;
 }
 
-/* 📱 Mobile */
 @media (max-width: 768px) {
   .charts-row {
     flex-direction: column;

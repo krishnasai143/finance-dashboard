@@ -30,7 +30,7 @@ const Piecharts = ({ data, range, setRange }) => {
       borderRadius: "10px"
     }}>
 
-      {/* Header */}
+  
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -66,7 +66,6 @@ const Piecharts = ({ data, range, setRange }) => {
         </select>
       </div>
 
-      {/* Body — row on desktop, column on mobile */}
       <div style={{
         display: "flex",
         flexDirection: isMobile ? "column" : "row",
@@ -74,7 +73,6 @@ const Piecharts = ({ data, range, setRange }) => {
         gap: isMobile ? "16px" : "20px"
       }}>
 
-        {/* Pie */}
         <div style={{
           width: "100%",
           height: isMobile ? 220 : 250,
@@ -106,7 +104,6 @@ const Piecharts = ({ data, range, setRange }) => {
           </ResponsiveContainer>
         </div>
 
-        {/* Legend — row wrap on mobile, column on desktop */}
         <div style={{
           display: "flex",
           flexDirection: isMobile ? "row" : "column",

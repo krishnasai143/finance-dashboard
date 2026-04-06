@@ -72,7 +72,6 @@ const Transactions = ({ transactions, role, handledelete, handleadd }) => {
   const [showform, setshowform] = useState(false);
   const [hintSeen, setHintSeen] = useState(false);
 
-  // ✅ NEW STATES
   const [search, setSearch] = useState("");
   const [filterType, setFilterType] = useState("all");
 
@@ -91,7 +90,7 @@ const Transactions = ({ transactions, role, handledelete, handleadd }) => {
     setFormData({
       ...formData,
       type: value,
-      category: CATEGORY_MAP[value][0] // ✅ auto select first
+      category: CATEGORY_MAP[value][0] 
     });
   } else {
     setFormData({ ...formData, [name]: value });
@@ -108,7 +107,6 @@ const Transactions = ({ transactions, role, handledelete, handleadd }) => {
     setshowform(false);
   };
 
-  // ✅ FILTER LOGIC
  const filteredTransactions = transactions
   .filter((t) => {
     const matchesSearch = t.description
@@ -120,7 +118,7 @@ const Transactions = ({ transactions, role, handledelete, handleadd }) => {
 
     return matchesSearch && matchesType;
   })
-  .sort((a, b) => new Date(b.date) - new Date(a.date)); // ✅ NEWEST FIRST
+  .sort((a, b) => new Date(b.date) - new Date(a.date)); 
   const CATEGORY_MAP = {
   income: ["Salary", "Freelance"],
   expense: [
@@ -150,7 +148,7 @@ const Transactions = ({ transactions, role, handledelete, handleadd }) => {
         )}
       </div>
 
-      {/* ✅ SEARCH + FILTER */}
+     
       <div className="filters">
         <input
           type="text"
@@ -169,7 +167,6 @@ const Transactions = ({ transactions, role, handledelete, handleadd }) => {
         </select>
       </div>
 
-      {/* ── DESKTOP TABLE ── */}
       <div className="table-wrapper desktop-table">
         <table>
           <thead>
@@ -239,7 +236,7 @@ const Transactions = ({ transactions, role, handledelete, handleadd }) => {
         </table>
       </div>
 
-      {/* ── MOBILE LIST ── */}
+  
       <div className="mobile-list">
         {showform && role === "admin" && (
   <div className="mobile-form">

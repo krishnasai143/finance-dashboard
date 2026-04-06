@@ -6,14 +6,12 @@ import "./App.css";
 import Transactionpage from './pages/Transactionpage.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 
-// ✅ YOUR MOCK API URL
 const API_URL = "https://69d0ecec90cd06523d5da71b.mockapi.io/transactions";
 
 const App = () => {
   const [transactions, settransactions] = useState([]);
   const [role, setRole] = useState("admin");
 
-  // ✅ GET DATA
   useEffect(() => {
     axios.get(API_URL)
       .then((res) => {
@@ -25,16 +23,14 @@ const App = () => {
       });
   }, []);
 
-  // ✅ ADD TRANSACTION
   const handleadd = (newtrans) => {
     axios.post(API_URL, newtrans)
       .then((res) => {
-        settransactions(prev => [res.data, ...prev]); // latest on top
+        settransactions(prev => [res.data, ...prev]); 
       })
       .catch(err => console.log(err));
   };
 
-  // ✅ DELETE TRANSACTION
  const handledelete = async (id) => {
   try {
     const deleteId = String(id);
@@ -43,7 +39,6 @@ const App = () => {
 
     await axios.delete(`${API_URL}/${deleteId}`);
 
-    // 🔥 force reload (guaranteed UI update)
     window.location.reload();
 
   } catch (err) {
@@ -51,7 +46,6 @@ const App = () => {
   }
 };
 
-  // ✅ CALCULATIONS
   const income = transactions
     .filter(t => t.type === "income")
     .reduce((sum, t) => sum + Number(t.amount), 0);

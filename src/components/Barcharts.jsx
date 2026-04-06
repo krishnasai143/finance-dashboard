@@ -19,11 +19,11 @@ const BarChartComponent = ({ data, dataKey, title, color }) => {
             <XAxis dataKey="month" stroke="#9ca3af" />
             <YAxis stroke="#9ca3af" />
 
-            {/* ✅ FIXED BAR */}
+           
             <Bar
               dataKey={dataKey}
               fill={color}
-              activeBar={false}   // ❌ removes click highlight
+              activeBar={false}   
             />
           </BarChart>
         </ResponsiveContainer>
